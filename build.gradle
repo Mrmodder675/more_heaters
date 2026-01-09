@@ -113,14 +113,14 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    // Maven Central - required for most dependencies
+    mavenCentral()
 
-        //...
-        maven {
-            name = "Valkyrien Skies"
-            url = "https://maven.valkyrienskies.org"
-
-        //...
+    maven {
+        name = "Valkyrien Skies"
+        url = "https://maven.valkyrienskies.org"
     }
+
     // Put repositories for dependencies here
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
 
@@ -130,6 +130,7 @@ repositories {
     //     dir 'libs'
     // }
 }
+
 
 dependencies {
     // Specify the version of Minecraft to use.
