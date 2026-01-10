@@ -13,3 +13,9 @@ plugins {
 }
 
 rootProject.name = 'more-heaters'
+
+include(":kelvin-forge")
+project(":kelvin-forge").projectDir = file("../Kelvin/forge")
+
+include(":clockwork-forge")
+project(":clockwork-forge").projectDir = file("../Clockwork/forge")

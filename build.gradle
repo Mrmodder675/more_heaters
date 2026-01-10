@@ -115,20 +115,52 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     // Maven Central - required for most dependencies
     mavenCentral()
+}
+allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
 
-    maven {
-        name = "Valkyrien Skies"
-        url = "https://maven.valkyrienskies.org"
+        // Forge
+        maven { url = "https://maven.minecraftforge.net" }
+
+        // Kotlin for Forge
+        maven { url = "https://thedarkcolour.github.io/KotlinForForge/" }
+
+        // Create + Flywheel + Registrate + Ponder
+        maven { url = "https://maven.tterrag.com/" }
+        maven { url = "https://maven.jozufozu.com/" }
+        maven { url = "https://maven.createmod.net/" }
+
+        // JEI
+        maven { url = "https://maven.blamejared.com" }
+        maven { url = "https://modmaven.dev" }
+
+        // CC:Tweaked
+        maven { url = "https://squiddev.cc/maven" }
+
+        // VS2
+        maven { url = "https://maven.valkyrienskies.org" }
+
+        // Jitpack (fallback)
+        maven { url = "https://jitpack.io" }
     }
+}
 
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
 
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
-    // flatDir {
-    //     dir 'libs'
-    // }
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    implementation project(":kelvin-forge")
+    implementation project(":clockwork-forge")
+
+    // Add Kelvin as a dependency (adjust version as needed)
+    // If Kelvin is published to the VS maven:
+    // OR if you want to use it locally from the workspace:
+    // implementation project(':forge')
+
+    // If Clockwork is a separate mod, add it too
+    // implementation fg.deobf("org.valkyrienskies.clockwork:clockwork-forge:1.20.1-YOUR_VERSION_HERE")
 }
 
 

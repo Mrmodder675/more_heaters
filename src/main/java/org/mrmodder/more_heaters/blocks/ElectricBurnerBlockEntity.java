@@ -1,4 +1,4 @@
 package org.mrmodder.more_heaters.blocks;
 
-public class ElectricBurnerBlockEntity extends CoalBurner  {
+public class ElectricBurnerBlockEntity extends   {
 }
