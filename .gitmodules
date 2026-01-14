@@ -1,6 +1,6 @@
 [submodule "Kelvin"]
 	path = Kelvin
-	url = https://github.com/ValkyrienSkies/Kelvin.git
+	url = https://github.com/ValkyrienSkies/Kelvin
 [submodule "Clockwork"]
 	path = Clockwork
-	url = https://github.com/ValkyrienSkies/Clockwork.git
+	url = https://github.com/ValkyrienSkies/Clockwork
